@@ -40,10 +40,8 @@ class ShortUrl {
             
             //生成6位短网址
             for ($j = 0; $j < 6; $j++) {
-                
                 //将得到的值与0x0000003d,3d为61，即charset的坐标最大值
                 $short_url .= self::$charset[$hex & 0x0000003d];
-                
                 //循环完以后将hex右移5位
                 $hex = $hex >> 5;
             }
