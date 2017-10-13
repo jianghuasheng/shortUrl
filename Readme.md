@@ -36,7 +36,7 @@
 - [短链接还原长链接的功能源码地址](https://github.com/jianghuasheng/shortUrl/blob/master/index.php "源码地址")
 
 ### 三、线上部署 ###
-> 想直接配置类似这种‘http://s.jianghuasheng.cn/Gjhg4o’=>域名+6位标识码就可以访问的，需要在nginx虚拟主机的配置文件那里配置。主要是在配置文件里加上重定向的配置，如下（注意：这里的是Nginx的环境配置，Apache的请前往百度）：
+> 想直接配置类似这种http://s.jianghuasheng.cn/Gjhg4o=>域名+6位标识码就可以访问的，需要在nginx虚拟主机的配置文件那里配置。主要是在配置文件里加上重定向的配置，如下（注意：这里的是Nginx的环境配置，Apache的请前往百度）：
 
 ``` html
  location / {
@@ -45,8 +45,8 @@
      }
   }
 ```
-> 这里的意思主要是指默认把链接：‘http://s.jianghuasheng.cn/Gjhg4o’转换为‘http://s.jianghuasheng.cn/index.php?url=Gjhg4o’。<br>
-> 当然，配置成类似‘http://jianghuasheng.cn/s/Gjhg4o’的方法也是大概一直的，这里不一一介绍了。
+> 这里的意思主要是指默认把链接：（http://s.jianghuasheng.cn/Gjhg4o）转换为（http://s.jianghuasheng.cn/index.php?url=Gjhg4o）。<br>
+> 当然，配置成类似（http://jianghuasheng.cn/s/Gjhg4o）的方法也是大概一直的，这里不一一介绍了。
 
 ## 总结 ##
 > 实现这个功能并不是很难，但是有几点还是要注意下的：保证每次生成的标志码都是不一样的！这里通过网上找到的一个算法，通过对用户传过来的连接进行处理，得到不同的标志码。长链接不同，标志码生成就不一样了。同时，为了该功能模块的使用简便性，直接架构成接口的模式，直接直接调用接口就可以实现功能。
